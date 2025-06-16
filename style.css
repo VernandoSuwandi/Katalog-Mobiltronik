@@ -31,6 +31,14 @@ ul {
     align-items: center;
 }
 
+.brands-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -203,7 +211,7 @@ small {
 
 /* TESTIMONIAL */
 .testimonial {
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 .testimonial .col-3 {
@@ -227,7 +235,7 @@ small {
 
 /* BRANDS */
 .brands {
-    margin: 100px auto;
+    margin: 50px auto;
 }
 
 .col-5 {
@@ -319,7 +327,12 @@ small {
     transition: max-height 0.3s ease-in-out;
     padding: 10px 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+    }
+    
+      .brands .col-5 {
+        width: 40%; /* Jadi 2 per baris */
+        max-width: 150px;
+      }
 
 
     nav ul li {
