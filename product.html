@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Audio Indonesia</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        nav {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul {
+            padding: 0 40px;
+            display: flex;
+            gap: 60px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        @media (min-width: 801px) {
+            nav ul {
+                max-height: none !important;
+                overflow: visible;
+            }
+        }
+        .brands .col-5 {
+            margin: 15px;
+        }
+        .brands .col-5 img {
+            display: block;
+            margin: auto;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 20px 0;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: 0.3s ease;
+            text-align: center;
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-card h4 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+        .product-card p {
+            font-size: 14px;
+            color: #777;
+            padding: 0 10px 10px;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(#fff, #ffd6d6);
+        }
+        html, body {
+            height: 100%;
+        }
+        h2.title {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container navbar">
+            <div class="logo">
+                <img src="images/flogo.png" alt="Car Audio Indonesia Logo">
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="icons">
+                <img src="images/cart.png" class="cart-icon" alt="Cart">
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()" alt="Menu">
+            </div>
+        </div>
+    </header>
+
+    <div class="small-container">
+        <h2 class="title">Semua Produk</h2>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="images/category-1.jpg" alt="HEADUNIT">
+            <h4>Headunit Multimedia</h4>
+            <p>Kontrol hiburan & navigasi dari dashboard Anda.</p>
+          </div>
+          <div class="product-card">
+            <img src="images/category-2.jpg" alt="TV ROOF">
+            <h4>TV Roof Monitor</h4>
+            <p>Untuk kenyamanan penumpang di kursi belakang.</p>
+          </div>
+          <div class="product-card">
+            <img src="images/category-3.jpg" alt="KAMERA 360">
+            <h4>Kamera 360°</h4>
+            <p>Lihat sekitar kendaraan secara menyeluruh saat parkir.</p>
+          </div>
+          <div class="product-card">
+            <img src="images/category-1.jpg" alt="DASHCAM">
+            <h4>Dashcam</h4>
+            <p>Rekam perjalanan dan tingkatkan keamanan.</p>
+          </div>
+          <div class="product-card">
+            <img src="images/category-2.jpg" alt="SUBWOOFER">
+            <h4>Subwoofer</h4>
+            <p>Rasakan dentuman bass berkualitas tinggi.</p>
+          </div>
+          <div class="product-card">
+            <img src="images/category-3.jpg" alt="KAMERA 360">
+            <h4>Speaker</h4>
+            <p>Rasakan suara yang spektakuler dari mobilmu.</p>
+          </div>
+        </div>
+    </div>
+
+    <footer class="footer" style="margin-top: 25px;">
+        <div class="container row">
+            <div class="footer-col-1">
+                <h3>Visit Our Store</h3>
+                <div class="app-logo">
+                    <img src="images/play-store.png" alt="Play Store">
+                    <img src="images/app-store.png" alt="App Store">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="images/logo-white1.png" alt="Logo Footer">
+                <p>Jl. Kembang Kerep No.75B, Jakarta Barat, Indonesia 11610</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Link Online Store</h3>
+                <ul>
+                    <li>Tokopedia</li>
+                    <li>Shopee</li>
+                    <li>Website</li>
+                    <li>Bukalapak</li>
+                    <li>Blibli</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Social Media</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Instagram</li>
+                    <li>Whatsapp</li>
+                    <li>X</li>
+                    <li>Thread</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">&copy; 2025 - Mr. V</p>
+    </footer>
+
+    <script>
+        const MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (MenuItems.style.maxHeight === "0px") {
+                MenuItems.style.maxHeight = "400px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+
+        document.addEventListener("click", function (event) {
+            const isClickInsideMenu = MenuItems.contains(event.target);
+            const isClickOnMenuIcon = event.target.classList.contains("menu-icon");
+
+            if (!isClickInsideMenu && !isClickOnMenuIcon) {
+                MenuItems.style.maxHeight = "0px";
+            }
+        });
+    </script>
+</body>
+</html>
