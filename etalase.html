@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Etalase Produk</title>
+<link rel="stylesheet" href="style.css">
+  <style>
+
+      nav ul {
+            padding: 0 60px;
+            padding: 0 40px;
+            display: flex;
+        }
+
+            h1 {
+      text-align: center;
+      margin: 30px 0 10px;
+    }
+
+    .product-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+    
+.footer-col-2{
+            margin-top: 40px;
+        }
+
+  @media (min-width: 300px) {
+
+    body {
+      font-family: Poppins, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+    }
+
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .filter-bar input, .filter-bar select {
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+.product-card {
+  width: 250px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.2s;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto 10px auto; /* Ini yang bikin gambar center */
+  aspect-ratio: 1 / 1;
+}
+
+.product-card h3 {
+  margin: 10px 0;
+}
+        
+}
+
+
+@media only screen and (max-width: 768px) {
+  .filter-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 10px;
+  justify-items: center;
+}
+
+.product-card {
+  width: 100%; /* biar mengikuti kolom */
+  max-width: 180px; /* optional, biar gak terlalu lebar */
+}
+
+  .product-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pagination button {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  nav ul li a.active {
+  color: #4CAF50;
+  font-weight: bold;
+}
+}
+  </style>
+</head>
+<body>
+
+      <header class="header">
+        <div class="container navbar">
+            <div class="logo">
+                <img src="images/flogo.png" alt="Car Audio Indonesia Logo">
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="etalase.html" class="active">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="icons">
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()" alt="Menu">
+            </div>
+        </div>
+
+<h1>Etalase Produk</h1>
+
+
+<div class="filter-bar">
+<select id="filter-kategori">
+  <option value="semua">Semua Kategori</option>
+  <option value="headrest">Headrest</option>
+  <option value="headunit">Headunit</option>
+  <option value="kamera">Kamera</option>
+  <option value="peredam">Peredam</option>
+  <option value="roof">Roof Monitor</option>
+  <option value="speaker">Speaker</option>
+  <option value="subwoofer">Subwoofer</option>
+</select>
+
+<select id="filter-subkategori">
+  <option value="semua">Semua Subkategori</option>
+</select>
+
+<input type="text" id="cariNama" placeholder="Cari nama produk...">
+</div>
+
+<div class="product-grid">
+  <div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+    <img src="images/alpt1.png" alt="HU Tesla Alphard" />
+    <h3>Headunit Tesla Alphard 2010-2014</h3>
+  </div>
+  <div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+    <img src="images/alpt2.png" alt="HU Tesla Alphard" />
+    <h3>Headunit Tesla Alphard 2015-2019</h3>
+  </div>
+  <div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+    <img src="images/camt1.png" alt="HU Tesla Camry" />
+    <h3>Headunit Tesla Camry 2006-2011</h3>
+  </div>
+  <div class="product-card" data-kategori="headunit" data-subkategori="Headunit-tesla">
+    <img src="images/camt2.png" alt="HU Tesla Camry" />
+    <h3>Headunit Tesla Camry 2012-2016</h3>
+  </div>
+  <div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+    <img src="images/camt2.png" alt="HU Tesla Camry" />
+    <h3>Headunit Tesla Camry 2012-2016</h3>
+  </div>
+  <div class="product-card" data-kategori="peredam" data-subkategori="peredam-dynawin">
+    <img src="images/pel.png" alt="Peredam" />
+    <h3>Peredam Dynawin Elite</h3>
+  </div>
+  <div class="product-card" data-kategori="peredam" data-subkategori="peredam-dynawin">
+    <img src="images/pex.png" alt="Peredam" />
+    <h3>Peredam Dynawin Expert</h3>
+  </div>
+  <div class="product-card" data-kategori="peredam" data-subkategori="peredam-dynawin">
+    <img src="images/pep.png" alt="Peredam" />
+    <h3>Peredam Dynawin Premium</h3>
+  </div>
+</div>
+
+
+  <footer class="footer">
+        <div class="container row">
+            <div class="footer-col-1">
+                <h3>Visit Our Store</h3>
+                <div class="app-logo">
+                    <img src="images/play-store.png" alt="Play Store">
+                    <img src="images/app-store.png" alt="App Store">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="images/logo-white1.png" alt="Logo Footer">
+                <p>Jl. Kembang Kerep No.75B, Jakarta Barat, Indonesia 11610</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Link Online Store</h3>
+                <ul>
+                    <li>Tokopedia</li>
+                    <li>Shopee</li>
+                    <li>Website</li>
+                    <li>Bukalapak</li>
+                    <li>Blibli</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Social Media</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Instagram</li>
+                    <li>Whatsapp</li>
+                    <li>X</li>
+                    <li>Thread</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">&copy; 2025 - Mr. V</p>
+    </footer>
+
+    <script>
+        const MenuItems = document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (MenuItems.style.maxHeight === "0px") {
+                MenuItems.style.maxHeight = "400px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+
+    document.addEventListener("click", function (event) {
+        const isClickInsideMenu = MenuItems.contains(event.target);
+        const isClickOnMenuIcon = event.target.classList.contains("menu-icon");
+
+        if (!isClickInsideMenu && !isClickOnMenuIcon) {
+            MenuItems.style.maxHeight = "0px";
+        }
+    });
+
+  const kategoriFilter = document.getElementById('filter-kategori');
+  const subkategoriFilter = document.getElementById('filter-subkategori');
+  const inputCari = document.getElementById('cariNama');
+  const cards = document.querySelectorAll('.product-card');
+
+  // Mapping kategori -> subkategori
+  const subkategoriOptions = {
+    semua: ["Semua Subkategori"],
+    headunit: ["Semua Subkategori", "Headunit-Universal", "Headunit-Tesla", "Headunit-OEM"],
+    roof: ["TV Roof Universal", "TV Roof Alphard", "TV Roof Innova"],
+    kamera: ["Kamera DVR", "Kamera Dashcam", "Kamera 360", "Kamera 360 Built-in", "Kamera Mundur"],
+    subwoofer: ["Subwoofer Kolong"],
+    speaker: ["Speaker Active"],
+    headrest: ["Headrest Android", "Headrest OEM"],
+    peredam: ["Semua Subkategori", "Peredam Aurall", "Peredam Dynawin"],
+    kabel: ["Kabel Speaker"]
+  };
+
+function updateSubkategoriOptions() {
+  const kategori = kategoriFilter.value.toLowerCase();
+  const subkategoris = subkategoriOptions[kategori] || [];
+
+  subkategoriFilter.innerHTML = "";
+
+  subkategoris.forEach((sub, index) => {
+    const opt = document.createElement("option");
+
+    // Jika ini adalah "Semua Subkategori", kita pastikan value-nya adalah "semua"
+    if (index === 0 && sub.toLowerCase().includes("semua")) {
+      opt.value = "semua";
+    } else {
+      opt.value = sub.toLowerCase().replace(/\s+/g, '-');
+    }
+
+    opt.textContent = sub;
+    subkategoriFilter.appendChild(opt);
+  });
+}
+
+  function filterProduk() {
+    const kategori = kategoriFilter.value.toLowerCase();
+    const subkategori = subkategoriFilter.value.toLowerCase();
+    const keyword = inputCari.value.toLowerCase();
+
+    cards.forEach(card => {
+      const cardKategori = (card.getAttribute('data-kategori') || '').toLowerCase();
+      const cardSubkategori = (card.getAttribute('data-subkategori') || '').toLowerCase();
+      const namaProduk = card.querySelector('h3').textContent.toLowerCase();
+
+      const cocokKategori = (kategori === 'semua' || cardKategori.toLowerCase() === kategori);
+      const cocokSubkategori = (subkategori === 'semua' || cardSubkategori.toLowerCase() === subkategori);
+      const cocokPencarian = namaProduk.includes(keyword);
+
+      if (cocokKategori && cocokSubkategori && cocokPencarian) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  kategoriFilter.addEventListener('change', () => {
+    updateSubkategoriOptions();
+    filterProduk();
+  });
+
+  subkategoriFilter.addEventListener('change', filterProduk);
+  inputCari.addEventListener('input', filterProduk);
+
+  // Inisialisasi saat pertama kali load
+  updateSubkategoriOptions();
+  filterProduk();
+    </script>
+
+</body>
+</html>
