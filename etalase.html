@@ -1,11 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Etalase Produk</title>
-<link rel="stylesheet" href="style.css">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Etalase Produk</title>
+<link href="style.css" rel="stylesheet"/>
+<style>
+        nav {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
 
       nav ul {
             padding: 0 60px;
@@ -27,7 +33,7 @@
 .footer-col-2{
             margin-top: 40px;
         }
-
+        
   @media (min-width: 300px) {
 
     body {
@@ -76,8 +82,29 @@
         
 }
 
+        @media (min-width: 801px) {
+            nav ul {
+                max-height: none !important;
+                overflow: visible;
+            }
+        }
+            .brands .col-5 {
+            margin: 15px;
+        }
+
+        .brands .col-5 img {
+            display: block;
+            margin: auto;
+        }
+
+        nav ul li a.active {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
 
 @media only screen and (max-width: 768px) {
+
   .filter-bar {
     flex-direction: column;
     align-items: center;
@@ -116,124 +143,262 @@
 }
 }
   </style>
-</head>
-<body>
-
-      <header class="header">
-        <div class="container navbar">
-            <div class="logo">
-                <img src="images/flogo.png" alt="Car Audio Indonesia Logo">
-            </div>
-            <nav>
-                <ul id="MenuItems">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="etalase.html" class="active">Products</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="icons">
-                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()" alt="Menu">
-            </div>
-        </div>
-
+<meta content="Headunit Android &amp; audio mobil: pemasangan OEM/Tesla, kamera parkir, navigasi, dan layanan instalasi di Jakarta." name="description"/><meta content="Etalase Produk" property="og:title"/><meta content="Upgrade mobil Anda dengan headunit Android &amp; audio terbaik." property="og:description"/><meta content="images/logo-white1.png" property="og:image"/><link href="images/logo-white1.png" rel="icon"/></head>
+<body><a class="skip-link" href="#main">Lewati ke konten utama</a>
+<header class="header">
+<div class="container navbar">
+<div class="logo">
+<div class="brand-logo"><img alt="Car Audio Indonesia Logo" loading="lazy" src="images/flogo.png"/></div>
+</div>
+<nav>
+<ul id="MenuItems">
+<li><a class="" href="index.html">Home</a></li>
+<li><a aria-current="page" class="active active" href="etalase.html">Products</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<div class="icons">
+<img alt="Menu" class="menu-icon" loading="lazy" onclick="menutoggle()" src="images/menu.png"/>
+</div>
+</div>
 <h1>Etalase Produk</h1>
-
-
 <div class="filter-bar">
 <select id="filter-kategori">
-  <option value="semua">Semua Kategori</option>
-  <option value="headrest">Headrest</option>
-  <option value="headunit">Headunit</option>
-  <option value="kamera">Kamera</option>
-  <option value="peredam">Peredam</option>
-  <option value="roof">Roof Monitor</option>
-  <option value="speaker">Speaker</option>
-  <option value="subwoofer">Subwoofer</option>
+<option value="semua">Semua Kategori</option>
+<option value="headrest">Headrest</option>
+<option value="headunit">Headunit</option>
+<option value="kamera">Kamera</option>
+<option value="peredam">Peredam</option>
+<option value="roof">Roof Monitor</option>
+<option value="speaker">Speaker</option>
+<option value="subwoofer">Subwoofer</option>
 </select>
-
 <select id="filter-subkategori">
-  <option value="semua">Semua Subkategori</option>
+<option value="semua">Semua Subkategori</option>
 </select>
-
-<input type="text" id="cariNama" placeholder="Cari nama produk...">
+<input id="cariNama" placeholder="Cari nama produk..." type="text"/>
 </div>
-
 <div class="product-grid">
-  <div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
-    <img src="images/alpt1.png" alt="HU Tesla Alphard" />
-    <h3>Headunit Tesla Alphard 2010-2014</h3>
-  </div>
-  <div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
-    <img src="images/alpt2.png" alt="HU Tesla Alphard" />
-    <h3>Headunit Tesla Alphard 2015-2019</h3>
-  </div>
-  <div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
-    <img src="images/camt1.png" alt="HU Tesla Camry" />
-    <h3>Headunit Tesla Camry 2006-2011</h3>
-  </div>
-  <div class="product-card" data-kategori="headunit" data-subkategori="Headunit-tesla">
-    <img src="images/camt2.png" alt="HU Tesla Camry" />
-    <h3>Headunit Tesla Camry 2012-2016</h3>
-  </div>
-  <div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
-    <img src="images/camt2.png" alt="HU Tesla Camry" />
-    <h3>Headunit Tesla Camry 2012-2016</h3>
-  </div>
-  <div class="product-card" data-kategori="peredam" data-subkategori="peredam-dynawin">
-    <img src="images/pel.png" alt="Peredam" />
-    <h3>Peredam Dynawin Elite</h3>
-  </div>
-  <div class="product-card" data-kategori="peredam" data-subkategori="peredam-dynawin">
-    <img src="images/pex.png" alt="Peredam" />
-    <h3>Peredam Dynawin Expert</h3>
-  </div>
-  <div class="product-card" data-kategori="peredam" data-subkategori="peredam-dynawin">
-    <img src="images/pep.png" alt="Peredam" />
-    <h3>Peredam Dynawin Premium</h3>
-  </div>
+<div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+<a href="detail.html"><img alt="HU Tesla Alphard" loading="lazy" src="images/alpt1.png"/></a>
+<h3>Headunit Tesla Alphard 2010-2014</h3>
 </div>
-
-
-  <footer class="footer">
-        <div class="container row">
-            <div class="footer-col-1">
-                <h3>Visit Our Store</h3>
-                <div class="app-logo">
-                    <img src="images/play-store.png" alt="Play Store">
-                    <img src="images/app-store.png" alt="App Store">
-                </div>
-            </div>
-            <div class="footer-col-2">
-                <img src="images/logo-white1.png" alt="Logo Footer">
-                <p>Jl. Kembang Kerep No.75B, Jakarta Barat, Indonesia 11610</p>
-            </div>
-            <div class="footer-col-3">
-                <h3>Link Online Store</h3>
-                <ul>
-                    <li>Tokopedia</li>
-                    <li>Shopee</li>
-                    <li>Website</li>
-                    <li>Bukalapak</li>
-                    <li>Blibli</li>
-                </ul>
-            </div>
-            <div class="footer-col-4">
-                <h3>Social Media</h3>
-                <ul>
-                    <li>Facebook</li>
-                    <li>Instagram</li>
-                    <li>Whatsapp</li>
-                    <li>X</li>
-                    <li>Thread</li>
-                </ul>
-            </div>
-        </div>
-        <hr>
-        <p class="copyright">&copy; 2025 - Mr. V</p>
-    </footer>
-
-    <script>
+<div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+<img alt="HU Tesla Alphard" loading="lazy" src="images/alpt2.png"/>
+<h3>Headunit Tesla Alphard 2015-2019</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+<img alt="HU Tesla Camry" loading="lazy" src="images/camt1.png"/>
+<h3>Headunit Tesla Camry 2006-2011</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+<img alt="HU Tesla Camry" loading="lazy" src="images/camt2.png"/>
+<h3>Headunit Tesla Camry 2012-2016</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+<img alt="HU Tesla Fortuner" loading="lazy" src="images/frtt1.png"/>
+<h3>Headunit Tesla Fortuner 2012-2015</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+<img alt="HU Tesla Fortuner" loading="lazy" src="images/frtt2.png"/>
+<h3>Headunit Tesla Fortuner 2016-2022</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+<img alt="HU Tesla Jeep Cherokee" loading="lazy" src="images/jchr1.png"/>
+<h3>Headunit Tesla Grand Cherokee 2014-2019</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+<img alt="HU Tesla Jeep Wrangler" loading="lazy" src="images/jwrt1.png"/>
+<h3>Headunit Tesla Jeep Wrangler 2018-2021</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM Landcruiser" loading="lazy" src="images/lcso1.png"/>
+<h3>Headunit OEM Landcruiser 2008-2015</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+<img alt="HU Tesla Landcruiser" loading="lazy" src="images/lcst1.png"/>
+<h3>Headunit Tesla Landcruiser 1998-2002</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+<img alt="HU Tesla Landcruiser" loading="lazy" src="images/lcst2.png"/>
+<h3>Headunit Tesla Landcruiser 2003-2007</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+<img alt="HU Tesla Landcruiser" loading="lazy" src="images/lcst3.png"/>
+<h3>Headunit Tesla Landcruiser 2008-2015</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+<img alt="HU Tesla Landcruiser" loading="lazy" src="images/lcst4.png"/>
+<h3>Headunit Tesla Landcruiser 2016-2020</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+<img alt="HU Tesla Lexus" loading="lazy" src="images/lxst1.png"/>
+<h3>Headunit Tesla Lexus 470 2004-2006</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+<img alt="HU Tesla Lexus" loading="lazy" src="images/lxst2.png"/>
+<h3>Headunit Tesla Lexus 570 2007-2015</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+<img alt="HU Tesla Pajero" loading="lazy" src="images/pjrt1.png"/>
+<h3>Headunit Tesla Pajero 2016-2019</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+<img alt="HU Tesla Pajero" loading="lazy" src="images/pjrt2.png"/>
+<h3>Headunit Tesla Pajero 2020-2022</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+<img alt="HU Tesla Harrier" loading="lazy" src="images/hrt1.png"/>
+<h3>Headunit Tesla Harrier 2013-2019</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+<img alt="HU Tesla Triton" loading="lazy" src="images/trt1.png"/>
+<h3>Headunit Tesla Triton 2015-2018</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="headunit-tesla">
+<img alt="HU Tesla Civic" loading="lazy" src="images/cvct.png"/>
+<h3>Headunit Tesla Civic 2016-2020</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM Mercy" loading="lazy" src="images/w204s.png"/>
+<h3>Headunit OEM Mercedes Benz W204 S204 NTG 4.0 2008-2010</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM Mercy" loading="lazy" src="images/w2041.png"/>
+<h3>Headunit OEM Mercedes Benz W204 S204 NTG 4.5 2011-2014</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM Mercy" loading="lazy" src="images/cglcv.png"/>
+<h3>Headunit OEM Mercedes Benz C / GLC / V 4.5 2015-2018</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM Mercy" loading="lazy" src="images/glaclaa.png"/>
+<h3>Headunit OEM Mercedes Benz GLA / CLA / A 4.5 2012-2015</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM Mercy" loading="lazy" src="images/aclagla5.png"/>
+<h3>Headunit OEM Mercedes Benz GLA / CLA / A 5.0 2012-2015</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM Mercy" loading="lazy" src="images/w2124.png"/>
+<h3>Headunit OEM Mercedes Benz W212 4.0 2009-2012</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM Mercy" loading="lazy" src="images/w21245.png"/>
+<h3>Headunit OEM Mercedes Benz W212 4.5 2013-2014</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM Mercy" loading="lazy" src="images/w2125.png"/>
+<h3>Headunit OEM Mercedes Benz W212 5.0 2015-2016</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM Mercy" loading="lazy" src="images/cls.png"/>
+<h3>Headunit OEM Mercedes Benz CLS 400 W218 4.0 2010-2012</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM Mercy" loading="lazy" src="images/ecp4.png"/>
+<h3>Headunit OEM Mercedes Benz E Coupe 4.0 2009-2012</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM Mercy" loading="lazy" src="images/bcl45.png"/>
+<h3>Headunit OEM Mercedes Benz B Class 4.5 2013-2015</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM Mercy" loading="lazy" src="images/bcl5.png"/>
+<h3>Headunit OEM Mercedes Benz B Class 5.0 2016-2017</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM Mercy" loading="lazy" src="images/mlgl45.png"/>
+<h3>Headunit OEM Mercedes Benz ML GL 4.5 2012-2015</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM Mercy" loading="lazy" src="images/ecp4.png"/>
+<h3>Headunit OEM Mercedes Benz E Coupe 4.0 2009-2012</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<div class="brand-logo"><img alt="HU OEM BMW" loading="lazy" src="images/bmww.png"/></div>
+<h3>Headunit OEM BMW X1 E84 CIC 2009-2015</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM BMW" loading="lazy" src="images/x1f48ev.png"/>
+<h3>Headunit OEM BMW X1 F48 EVO 2018-2020</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM BMW" loading="lazy" src="images/x1f48nb.png"/>
+<h3>Headunit OEM BMW X1 F48 NBT 2013-2016</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM BMW" loading="lazy" src="images/x3cic.png"/>
+<h3>Headunit OEM BMW X3 F25 X4 F26 CIC 2010-2012</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM BMW" loading="lazy" src="images/x3nbt.png"/>
+<h3>Headunit OEM BMW X3 F25 X4 F26 NBT 2013-2017</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM BMW" loading="lazy" src="images/x5cic.png"/>
+<h3>Headunit OEM BMW X5 E70 X6 E71 E72 CIC 2013-2017</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM BMW" loading="lazy" src="images/x5e70.png"/>
+<h3>Headunit OEM BMW X5 E70 X6 E71 E72 CCC 2007-2010</h3>
+</div>
+<div class="product-card" data-kategori="headunit" data-subkategori="Headunit-OEM">
+<img alt="HU OEM BMW" loading="lazy" src="images/x5nbt.png"/>
+<h3>Headunit OEM BMW X5 F15 X6 F16 NBT 2014-2017</h3>
+</div>
+<div class="product-card" data-kategori="peredam" data-subkategori="peredam-dynawin">
+<img alt="Peredam" loading="lazy" src="images/pel.png"/>
+<h3>Peredam Dynawin Elite</h3>
+</div>
+<div class="product-card" data-kategori="peredam" data-subkategori="peredam-dynawin">
+<img alt="Peredam" loading="lazy" src="images/pex.png"/>
+<h3>Peredam Dynawin Expert</h3>
+</div>
+<div class="product-card" data-kategori="peredam" data-subkategori="peredam-dynawin">
+<img alt="Peredam" loading="lazy" src="images/pep.png"/>
+<h3>Peredam Dynawin Premium</h3>
+</div>
+</div>
+<main id="main"></main><footer class="footer">
+<div class="container row">
+<div class="footer-col-1">
+<h3>Visit Our Store</h3>
+<div class="app-logo">
+<img alt="Play Store" loading="lazy" src="images/play-store.png"/>
+<img alt="App Store" loading="lazy" src="images/app-store.png"/>
+</div>
+</div>
+<div class="footer-col-2">
+<div class="brand-logo"><img alt="Logo Footer" class="footer-logo" loading="lazy" src="images/logo-white1.png"/></div>
+<p>Jl. Kembang Kerep No.75B, Jakarta Barat, Indonesia 11610</p>
+</div>
+<div class="footer-col-3">
+<h3>Link Online Store</h3>
+<ul>
+<li>Tokopedia</li>
+<li>Shopee</li>
+<li>Website</li>
+<li>Bukalapak</li>
+<li>Blibli</li>
+</ul>
+</div>
+<div class="footer-col-4">
+<h3>Social Media</h3>
+<ul>
+<li>Facebook</li>
+<li>Instagram</li>
+<li>Whatsapp</li>
+<li>X</li>
+<li>Thread</li>
+</ul>
+</div>
+</div>
+<hr/>
+<p class="copyright">© 2025 - Mr. V</p>
+</footer>
+<script>
         const MenuItems = document.getElementById("MenuItems");
 
         MenuItems.style.maxHeight = "0px";
@@ -328,6 +493,16 @@ function updateSubkategoriOptions() {
   updateSubkategoriOptions();
   filterProduk();
     </script>
-
-</body>
+</header><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Car Audio Indonesia",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jl. Kembang Kerep No.75B",
+    "addressLocality": "Jakarta Barat",
+    "addressCountry": "ID",
+    "postalCode": "11610"
+  }
+}</script></body>
 </html>
