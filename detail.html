@@ -1,0 +1,274 @@
+<!-- product-detail.html -->
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detail Produk - Aurall</title>
+<link href="style.css" rel="stylesheet"/>
+<style>
+        nav {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            padding: 0 60px;
+            padding: 0 40px;
+            display: flex;
+        }
+
+        .footer-col-2{
+            margin-top: 40px;
+        }
+
+        @media (min-width: 801px) {
+            nav ul {
+                max-height: none !important;
+                overflow: visible;
+            }
+        }
+            .brands .col-5 {
+            margin: 15px;
+        }
+
+        .brands .col-5 img {
+            display: block;
+            margin: auto;
+        }
+
+        nav ul li a.active {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+   /* ============ RESPONSIVE ============ */
+    @media (max-width: 768px) {
+      .product-container {
+        grid-template-columns: 1fr; /* jadi 1 kolom */
+        margin: 1rem;
+      }
+
+      .product-info h1 {
+        font-size: 1.5rem;
+      }
+
+      .product-price {
+        font-size: 1.3rem;
+      }
+
+      .product-actions button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .thumbnail-list img {
+        width: 50px;
+      }
+
+      .product-info h1 {
+        font-size: 1.2rem;
+      }
+
+      .product-price {
+        font-size: 1.1rem;
+      }
+    }
+  
+/* === Global buy-bar layout for all viewports (desktop + mobile) === */
+.buy-bar{
+  position: fixed; left:0; right:0; bottom:0;
+  background:#fff; box-shadow:0 -8px 24px rgba(0,0,0,.12);
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; padding:10px 16px; z-index:1000;
+}
+.buy-bar .price{ font-weight:700; color:#333; }
+.buy-bar .btn{ margin:0; text-align:center; }
+
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Aurall LED Camera 1080p",
+  "image": [
+    "https://example.com/images/alpt1.png",
+    "https://example.com/images/alpt2.png",
+    "https://example.com/images/Alphard30.png"
+  ],
+  "description": "Headunit Tesla Alphard 20 2010-2014",
+  "brand": { "@type": "Brand", "name": "Aurall" },
+  "sku": "AUR-LED1080",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "IDR",
+    "price": "10450000",
+    "availability": "https://schema.org/InStock",
+    "url": "https://example.com/detail.html"
+  }
+}</script><style>
+/* Detail page enhancements */
+.thumbnail { border:1px solid #eee; border-radius:8px; padding:4px; margin-right:8px; transition:border-color .15s; }
+.thumbnail:hover, .thumbnail:focus { border-color:#ff523b; outline: none; }
+.active-thumb { border-color:#ff523b; }
+.product-gallery img#mainImage { border-radius:12px; display:block; width:100%; height:auto; }
+@media (max-width:768px){
+  .buy-bar{
+    position: fixed; left:0; right:0; bottom:0;
+    background:#fff; box-shadow:0 -4px 20px rgba(0,0,0,.08);
+    display:flex; gap:12px; align-items:center; padding:10px 16px; z-index:1000;
+  
+  .buy-bar{ transition: transform .25s ease; }
+  .buy-bar.is-hidden{ transform: translateY(100%); }
+}
+  .buy-bar .btn { flex:1; text-align:center; }
+}
+</style></head>
+<body>
+<header class="header">
+<div class="container navbar">
+<div class="logo">
+<img alt="Car Audio Indonesia Logo" src="images/flogo.png"/>
+</div>
+<nav>
+<ul id="MenuItems">
+<li><a href="index.html">Home</a></li>
+<li><a class="active" href="etalase.html">Products</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<div class="icons">
+<img alt="Menu" class="menu-icon" onclick="menutoggle()" src="images/menu.png"/>
+</div>
+</div>
+<div class="product-container">
+<!-- Gallery -->
+<div aria-live="polite" class="product-gallery">
+<img alt="Produk Utama" height="800" id="mainImage" loading="eager" src="images/alpt1.png" width="800"/>
+<div class="thumbnail-list" role="list">
+<img alt="Tampak Depan" class="thumbnail active-thumb" loading="lazy" onclick="changeImage(this)" src="images/alpt1.png" tabindex="0"/>
+<img alt="Tampak Samping" class="thumbnail" loading="lazy" onclick="changeImage(this)" src="images/dt1.png" tabindex="0"/>
+<img alt="Tampak Terpasang" class="thumbnail" loading="lazy" onclick="changeImage(this)" src="images/dt2.png" tabindex="0"/>
+<img alt="Tampak Terpasang" class="thumbnail" loading="lazy" onclick="changeImage(this)" src="images/dt3.jpg" tabindex="0"/>
+<img alt="Tampak Terpasang" class="thumbnail" loading="lazy" onclick="changeImage(this)" src="images/dt4.jpg" tabindex="0"/>
+</div>
+</div>
+<!-- Info -->
+<div class="product-info">
+<h1>Headunit Tesla Alphard 20 2010-2014</h1>
+<p class="product-price" id="productPrice">Rp 10.450.000</p>
+<p style="text-align: justify;">Upgrade infotainment Alphard kamu ke layar besar 12.1” beresolusi 2K IPS HD. Sistem Android 13 dengan chipset QCM665 8-Core bikin navigasi super mulus, didukung RAM 8GB + ROM 128GB untuk instal banyak aplikasi tanpa patah-patah. Sudah mendukung Wireless CarPlay & Android Auto, DSP Sound Effect, dan Split-Screen. Tersedia untuk Low & High Car. Garansi 1 Tahun.</p>
+<br><label for="variant">Pilih Tipe:</label>
+<br><select aria-label="Pilih tipe produk" id="variant">
+<option>OEM</option>
+<option>Universal</option>
+</select>
+<div class="product-actions">
+<br><button class="cart-btn">Tambah ke Keranjang</button>
+</div>
+</div>
+</div>
+<footer class="footer">
+<div class="container row">
+<div class="footer-col-1">
+<h3>Visit Our Store</h3>
+<div class="app-logo">
+<img alt="Play Store" src="images/play-store.png"/>
+<img alt="App Store" src="images/app-store.png"/>
+</div>
+</div>
+<div class="footer-col-2">
+<img alt="Logo Footer" src="images/logo-white1.png"/>
+<p>Jl. Kembang Kerep No.75B, Jakarta Barat, Indonesia 11610</p>
+</div>
+<div class="footer-col-3">
+<h3>Link Online Store</h3>
+<ul>
+<li>Tokopedia</li>
+<li>Shopee</li>
+<li>Website</li>
+<li>Bukalapak</li>
+<li>Blibli</li>
+</ul>
+</div>
+<div class="footer-col-4">
+<h3>Social Media</h3>
+<ul>
+<li>Facebook</li>
+<li>Instagram</li>
+<li>Whatsapp</li>
+<li>X</li>
+<li>Thread</li>
+</ul>
+</div>
+</div>
+<hr/>
+<p class="copyright">© 2025 - Mr. V</p>
+</footer>
+<div class="buy-bar"><strong class="price">Rp 10.450.000</strong><a class="btn" href="https://wa.me/6281234567890?text=Halo%20saya%20mau%20Aurall%20LED%20Camera%201080p" rel="noopener" target="_blank">Chat WA</a></div><script>
+  function changeImage(el) {
+    document.getElementById("mainImage").src = el.src;
+  }
+
+          const MenuItems = document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (MenuItems.style.maxHeight === "0px") {
+                MenuItems.style.maxHeight = "400px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+
+    document.addEventListener("click", function (event) {
+        const isClickInsideMenu = MenuItems.contains(event.target);
+        const isClickOnMenuIcon = event.target.classList.contains("menu-icon");
+
+        if (!isClickInsideMenu && !isClickOnMenuIcon) {
+            MenuItems.style.maxHeight = "0px";
+        }
+    });
+</script>
+</header><script>
+// Enhance gallery interactions
+(function(){
+  function setActiveThumb(el){
+    document.querySelectorAll('.thumbnail').forEach(t=>t.classList.remove('active-thumb'));
+    el.classList.add('active-thumb');
+  }
+  window.changeImage = function(el){
+    const main = document.getElementById('mainImage');
+    if(!main) return;
+    main.src = el.src;
+    main.alt = el.alt ? ("Aurall LED Camera 1080p - " + el.alt.toLowerCase()) : main.alt;
+    setActiveThumb(el);
+  };
+  document.querySelectorAll('.thumbnail').forEach(t=>{
+    t.addEventListener('keydown', e=>{
+      if(e.key==='Enter' || e.key===' '){
+        e.preventDefault(); t.click();
+      }
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  const buyBar = document.querySelector('.buy-bar');
+  const footer = document.querySelector('footer.footer');
+  if (!buyBar || !footer || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver(([entry]) => {
+    buyBar.classList.toggle('is-hidden', entry.isIntersecting);
+  }, {rootMargin: '0px 0px -10% 0px'});
+  io.observe(footer);
+})();
+</script>
+
+</body>
+</html>
